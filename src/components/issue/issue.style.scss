@@ -1,0 +1,24 @@
+.issue-list {
+  .issue-title {
+    font-weight: 600;
+    font-size: 1rem;
+    display: block;
+    text-decoration: none;
+    color: #000000;
+  }
+
+  .issue-selected {
+    z-index: 2;
+    color: #000;
+    background-color: #007bff2b;
+    border: solid 1px #007bff8a;
+  }
+
+  .label {
+    padding: 0.15rem 5px;
+    margin: 0 4px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+}
