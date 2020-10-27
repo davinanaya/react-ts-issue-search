@@ -11,6 +11,10 @@ export const getIssues = async (query: any): Promise<IIssues[]> => {
         },
     );
 
-    const data = await response.json();
-    return data.items;
+    if (response.ok) {
+        const data = await response.json();
+        return data.items;
+    }
+
+    throw Error(response.statusText);
 };

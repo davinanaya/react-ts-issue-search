@@ -59,7 +59,7 @@ const IssueSearchLayout = () => {
         {query && !isLoading && !issues.length && (<Alert variant="warning">
           No Results
         </Alert>)}
-        <IssueList items={issues} selectedIndex={selectedIndex}/>
+        <IssueList items={issues} selectedIndex={selectedIndex} />
       </div>
     </div>
   );

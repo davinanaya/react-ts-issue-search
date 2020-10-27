@@ -6,6 +6,10 @@
       "dom.iterable",
       "esnext"
     ],
+    "types": [
+      "jest",
+      "node"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -21,8 +25,16 @@
     "jsx": "react",
     "noImplicitAny": false,
   },
-  "plugins": [{"name": "typescript-tslint-plugin"}],
+  "plugins": [
+    {
+      "name": "typescript-tslint-plugin"
+    }
+  ],
   "include": [
     "src"
+  ],
+  "exclude": [
+    "*.test.ts",
+    "*.test.tsx"
   ]
 }

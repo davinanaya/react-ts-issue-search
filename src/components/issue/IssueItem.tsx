@@ -10,7 +10,7 @@ interface IPropsIssue {
   selected: boolean;
 }
 
-const IssueItem = ({ title, labels = [], url, selected }: IPropsIssue) => {
+const IssueItem = ({ title, labels = [], url, selected }: IPropsIssue): JSX.Element => {
   const isSelected = selected ? 'issue-selected' : '';
 
   const labelItems = useMemo(

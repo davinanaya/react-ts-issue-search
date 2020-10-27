@@ -11,8 +11,7 @@ interface IPropsInput {
 }
 
 const InputSearch = ({ placeholder, onChange, onKeyDown }: IPropsInput): JSX.Element => {
-  return (
-    <>
+    return (
         <InputGroup className="mb-3">
             <DropdownButton
                 as={InputGroup.Prepend}
@@ -29,7 +28,7 @@ const InputSearch = ({ placeholder, onChange, onKeyDown }: IPropsInput): JSX.Ele
                 onKeyDown={onKeyDown}
             />
         </InputGroup>
-    </>);
+    );
 };
 
 export { InputSearch };
