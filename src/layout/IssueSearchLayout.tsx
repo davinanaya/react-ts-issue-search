@@ -9,16 +9,22 @@ import { getIssues } from '../services';
 const IssueSearchLayout = () => {
   const [query, setQuery] = useDebouncedState('', 200);
   const [issues, setIssues] = useState<IIssues[]>([]);
+  const [errors, setErrors] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
 
   useEffect(() => {
     const searchIssues = async () => {
       setIsLoading(true);
-      const results = await getIssues(query);
+      try {
+        const results = await getIssues(query);
 
-      setIsLoading(false);
-      setIssues(results || []);
+        setIsLoading(false);
+        setIssues(results || []);
+      } catch (error) {
+        setErrors(true);
+        setIssues([]);
+      }
     };
 
     setSelectedIndex(-1);
@@ -55,6 +61,9 @@ const IssueSearchLayout = () => {
             onKeyDown={(e: KeyboardEvent<HTMLInputElement>) => handleKeyDown(e)}
           />
         </div>
+        {errors && !issues.length && (<Alert variant="danger">
+          Error processing the data
+        </Alert>)}
 
         {query && !isLoading && !issues.length && (<Alert variant="warning">
           No Results

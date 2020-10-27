@@ -4,6 +4,8 @@ export interface IIssues {
     state: string;
     url: string;
     labels: IIssueLabel[];
+    comments: number;
+    comments_url: string;
 }
 
 export interface IIssueLabel {

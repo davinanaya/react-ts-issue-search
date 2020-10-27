@@ -9,12 +9,10 @@ import { ListGroup } from 'react-bootstrap';
 const IssueList = ({ items, selectedIndex, ...props }: { items: IIssues[], selectedIndex: number }): JSX.Element => {
   const issueItems = useMemo(
     () =>
-      items.map(({ id, title, labels, url }: IIssues, idx: number) => (
+      items.map(({ id, ...values }: IIssues, idx: number) => (
         <IssueItem
           key={id}
-          title={title}
-          labels={labels}
-          url={url}
+          data={{id, ...values}}
           selected={selectedIndex === idx}
         />
       )),

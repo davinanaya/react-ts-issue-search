@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, waitFor } from '@testing-library/react';
 import IssueSearchLayout from './IssueSearchLayout';
 import * as request from '../services';
 
@@ -50,7 +50,7 @@ describe('<IssueSearchLayout />', () => {
         expect(span.textContent).toBe('Type: discussion');
     });
 
-    it('should set class active on issue item', async () => {
+    it('should set class issue-selected on issue item', async () => {
         const { input, container } = setup();
         // wait for the mock api to update the states of the component 
         await waitFor(() => expect(mockApi).toHaveBeenCalledTimes(1))
