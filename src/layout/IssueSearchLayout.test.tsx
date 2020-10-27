@@ -14,14 +14,18 @@ describe('<IssueSearchLayout />', () => {
             labels: [{ id: 1, name: 'Type: discussion', color: '#d4d4d4', url: 'link-issue-label.com' }],
             state: 'test1',
             title: 'Test issue title',
-            url: 'link-issue.com'
+            url: 'link-issue.com',
+            comments: 12,
+            comments_url: 'link-issue-comment.com'
         },
         {
             id: 2,
             labels: [{ id: 2, name: 'Type: Bug', color: '#b60205', url: 'link-issue2-label.com' }],
             state: 'test2',
             title: 'Test issue title2',
-            url: 'link-issue2.com'
+            url: 'link-issue2.com',
+            comments: 4,
+            comments_url: 'link-issue2-comment.com'
         }]));
 
         setup = () => {

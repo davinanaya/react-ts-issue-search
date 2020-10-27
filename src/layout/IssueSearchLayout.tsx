@@ -20,6 +20,7 @@ const IssueSearchLayout = () => {
         const results = await getIssues(query);
 
         setIsLoading(false);
+        setErrors(false);
         setIssues(results || []);
       } catch (error) {
         setErrors(true);
@@ -57,8 +58,8 @@ const IssueSearchLayout = () => {
         <div className="input-container">
           <InputSearch
             placeholder="Type to search"
-            onChange={(e: ChangeEvent<HTMLInputElement>) => handleSearch(e)}
-            onKeyDown={(e: KeyboardEvent<HTMLInputElement>) => handleKeyDown(e)}
+            onChange={handleSearch}
+            onKeyDown={handleKeyDown}
           />
         </div>
         {errors && !issues.length && (<Alert variant="danger">
